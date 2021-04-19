@@ -1,0 +1,147 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: #eeeff1;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Roboto', sans-serif, "Exo", Helvetica, Arial, sans-serif;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.home_header {
+    background: linear-gradient(42deg, rgb(34, 20, 167) 0%, rgb(22, 72, 209) 36%, rgb(28, 138, 228) 100%);
+    padding: 8px;
+    color:#fff;
+}
+
+#head_title {
+    font-size: 2.5em;
+    font-weight: 600;
+    margin-bottom: 40px;
+    z-index: 1;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.card {
+    background:#fff;
+    position: relative;
+    border-radius: 25px;
+    width: 65%;
+    height: 70vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.shaddowed {
+    box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+.card .chatbox {
+    background:#fff;
+    position: absolute;
+    border:2px solid rgb(222, 222, 231);
+    top: 5%;
+    left: 3%;
+    width: 94%;
+    height: 90%;
+}
+
+.message-container {
+    overflow-y:scroll;
+    height: 87%;
+    background: rgb(240, 240, 240);;
+    display: flex;
+    flex-direction:column;
+    align-items: flex-start;
+}
+
+input[type=text] {
+    font-size: 24px;
+    border:2px solid rgb(222, 222, 231);
+    border-radius: 5px;
+    position: absolute;
+    width: 80%;
+    height: 10%;
+    left: 5px;
+    bottom: 5px;
+    padding: 8px 12px;
+    box-sizing: border-box;
+}
+
+::placeholder {
+    color: gray;
+    opacity: 0.7; 
+}
+
+input[type=text]:focus {
+    background-color: rgb(223, 228, 241);
+    outline-color: lightgray;
+}
+
+input[type=button]{
+    font-size: 24px;
+    background-color: white;
+    color: rgb(133, 48, 230);
+    border: 2px solid rgb(133, 48, 230);
+    border-radius: 5px;
+    position: absolute;
+    width: 18%;
+    bottom: 5px;
+    height: 10%;
+    right: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+input[type=button]:hover {
+    background-image: linear-gradient(to top, rgb(34, 20, 167) 0%, rgb(22, 72, 209) 36%, rgb(28, 138, 228) 100%);
+    border: 0;
+    color: white;
+}
+
+input[type=button]:focus {
+    outline: 0;
+    background: white;
+    color: lightgray;
+    border: 2px solid lightgray;
+}
+
+.message-in {
+    background-color: white;
+    text-align: left !important;
+    align-self: flex-start;
+    margin-left: 0.5vw;
+    border-bottom-left-radius: 0 !important;
+}
+
+.message-out {
+    background-color: limegreen;
+    text-align: right !important;
+    align-self: flex-end;
+    margin-right: 0.5vw;
+    border-bottom-right-radius: 0 !important;
+}
+
+.message-in, .message-out {
+    white-space:pre-wrap;
+    display: block;
+    padding: 1vh 1vw;
+    font-size: 22px;
+    max-width: 75%;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    border-style: hidden;
+    border-radius: 10px;
+    height: auto;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>COVID Question Answering</title>
+        <link rel="stylesheet" type="text/css" href="chatbot.css">
+        <script type="text/javascript" src="chatbot.js"></script>
+    </head>
+
+    <header class="home_header">
+        <h1 id="head_title">COVID Question Answering</h1>    
+    </header>
+
+    <div class="container">
+        <div class="card shaddowed">
+            <div class="chatbox">
+                <div class="message-container" id="message-container">
+                    <script type="text/javascript">
+                        initMessage();
+                    </script>
+                </div>
+                <input type="text" id="question" placeholder="Type your question here">
+                <input type="button" value="SEND" onclick="sendMessage()">
+            </div>
+          </div>
+    </div>
+    
+</html>
