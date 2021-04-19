@@ -4,7 +4,8 @@ var message_list = ["Welcome to talk with COVID Chatbot"];
 
 function sendMessage() {
     var question = document.getElementById('question').value;
-    if (question != "" && question != null) {
+    if(question != "" && question != null)
+    {
         message_list.push(question);
         append_out_message(question);
         document.getElementById('question').value = "";
@@ -15,9 +16,11 @@ function sendMessage() {
 }
 
 function initMessage() {
-    for (let i = 0; i < message_list.length; i++) {
+    for(let i=0; i<message_list.length; i++)
+    {
         var message = message_list[i];
-        if (message_list.includes(message)) {
+        if(message_list.includes(message))
+        {
             append_in_message(message);
             //$('messages').append('<div class="message-in"><p>message</p></div>')
         }
@@ -25,11 +28,11 @@ function initMessage() {
 }
 
 function append_in_message(message) {
-    var node = document.createElement("p");
-    node.setAttribute("class", "message-in");
+    var node = document.createElement("p");  
+    node.setAttribute("class", "message-in"); 
     var line = message.replaceAll('\\"', '\"').split(/[;\t]/)
     //var line = message.split(";")
-    for (i = 0; i < line.length; i++) {
+    for(i=0; i<line.length; i++) {
         var content = document.createTextNode(line[i]);
         node.appendChild(content);
         var linebreak = document.createElement('br');
@@ -40,8 +43,8 @@ function append_in_message(message) {
 }
 
 function append_out_message(message) {
-    var node = document.createElement("p");
-    node.setAttribute("class", "message-out");
+    var node = document.createElement("p");  
+    node.setAttribute("class", "message-out"); 
     var content = document.createTextNode(message);
     node.appendChild(content);
     var div = document.getElementById("message-container");
@@ -49,23 +52,11 @@ function append_out_message(message) {
 }
 
 function send_question(question) {
-    const request = require('request')
+    var xmlhttp = new XMLHttpRequest();
     var params = JSON.stringify({ "question": question });
-
-    let options = {
-        url: 'https://134.129.125.120:5000/api/',
-        method: 'PUT',
-        qs: {
-            params
-        }
-    }
-    request(options, (err, res, body) => {
-        try {
-            var json = JSON.parse(body);
-            console.log(body);
-            return body;
-        } catch (err) {
-            console.log('coinnest parsing error');
-        }
-    });
+    console.log(params);
+    xmlhttp.open("PUT", "https://134.129.125.120:5000/api/", true);
+    xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xmlhttp.send(params);
+    return xmlhttp.responseText;
 }
