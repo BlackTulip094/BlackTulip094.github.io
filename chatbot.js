@@ -68,12 +68,4 @@ function send_question(question) {
             console.log('coinnest parsing error');
         }
     });
-
-    var xmlhttp = new XMLHttpRequest();
-    var params = JSON.stringify({ "question": question });
-    console.log(params);
-    xmlhttp.open("PUT", "https://134.129.125.120:5000/api/", false);
-    xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    xmlhttp.send(params);
-    return xmlhttp.responseText;
 }
